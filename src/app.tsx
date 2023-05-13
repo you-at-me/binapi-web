@@ -57,7 +57,8 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     avatarProps: {
       src: initialState?.currentUser?.avatar,
       title: <AvatarName/>,
-      render: (_, avatarChildren) => {
+      // 原参数是：(_, avatarChildren) => {}
+      render: (_: any, avatarChildren: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined) => {
         return <AvatarDropdown>{ avatarChildren }</AvatarDropdown>;
       },
     },
