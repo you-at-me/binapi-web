@@ -25,6 +25,8 @@ interface ResponseStructure {
  * @doc https://umijs.org/docs/max/request#配置
  */
 export const errorConfig: RequestConfig = {
+  baseURL: "http://192.168.36.1:7529", // 表示基础调用的域名地址
+  withCredentials: true, // 防止用户登录刷新之后还要进行登录的情况，原理就是让前端请求后端的时候带着上次访问的 Cookie
   // 错误处理： umi@3 的错误处理方案。
   errorConfig: {
     // 错误抛出
